@@ -1,0 +1,23 @@
+{
+  "name": "twitterTestBot",
+  "version": "0.0.0",
+  "description": "testing and learning node",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/perez6736/twitterTestBot.git"
+  },
+  "author": "Daniel Perez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/perez6736/twitterTestBot/issues"
+  },
+  "homepage": "https://github.com/perez6736/twitterTestBot",
+  "dependencies": {
+    "twit": "~2.2.9"
+  }
+}
