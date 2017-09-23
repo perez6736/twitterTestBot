@@ -25,6 +25,14 @@
     var the31stOfDecInSeconds = moment(the31stOfDec).unix();
 
     //checks to see if a certain date is between the 26th and the 31st of december of the current year. 
+    console.log(nextChristmas.diff(now, 'days'));
+
+
+
+
+    // returns bool 
+    // params - now in seconds 
+    // tells you if todays date is between the 26th and the 31st 
     function isbetween26and31(now){ //return a boolean    
         if(now >= the26thOfDecInSeconds && now<=the31stOfDecInSeconds){
             console.log("its some date between the 26th and 31st of dec");
@@ -34,6 +42,8 @@
     }
 
 // tells you if today is christmas or  not. 
+//params - now in seconds - integer
+//returns bool 
     function isTodayChristmas(now){//return boolean 
         if(now >= christmasDayInSeconds && now < the26thOfDecInSeconds){
             console.log("ITS XMAS");
@@ -43,21 +53,25 @@
         return false; 
     }
 
+// tells you how many days are left until christmas 
+// returns a string days left till Christmas  
+    function howManyDaysLeftUntilXmas(){
+        var daysLeft;
+        if(isTodayChristmas(nowinSeconds)){
+            return "Todays is Christmas"
+        }
 
-    function howManyDaysLeftUntilXmas(now){
-        // if(isTodayChristmas){
-        //     tweet(today is christmas!)
-        // }
+        else if(isbetween26and31()){ //calculate how many days are left till next years christmas 
+            daysLeft = nextChristmas.diff(now, 'days');
+            return "There are " + daysLeft + " until Christmas";
 
-        // else if(isbetween26and31()){
-        //     caclulate days until christmas of the next year 
-        //          use time to X 
-        // }
+            
+        }
 
-        // else{
-        //     calculate days left until christmas of this year
-        //          use time to X 
-        // }  
+        else{ //calculate how may days are left until this christmas 
+           daysLeft = christmasDay.diff(now, 'days'); 
+           return "There are " + daysLeft + " until Christmas";
+        }  
     }
 
 
