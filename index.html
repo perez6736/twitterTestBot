@@ -3,22 +3,64 @@
 <head>
 	<title></title>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/locale/af.js"></script>
 </head>
 <body>
 
 
-
-
-
+<script src="moment.js"></script>
 <script>
-	moment().format();
-    console.log("learning how to use the moment.js lib");
+    var now = moment(); 
+    var nowinSeconds = moment(now).unix();
+
+    var year = moment().year(); //current year we are in 
+
+    var christmasDay = moment([year, 11, 25]);
+    var christmasDayInSeconds = moment(christmasDay).unix();
+    var nextChristmas = moment([year, 11, 25]).add(1, "y");
+
+    var the26thOfDec = moment([year, 11, 26]);
+    var the26thOfDecInSeconds = moment(the26thOfDec).unix();
+    //need to calculate up to the last second of the 31st 
+    var the31stOfDec = moment([year, 11, 31, 23, 59, 59]);
+    var the31stOfDecInSeconds = moment(the31stOfDec).unix();
+
+    //checks to see if a certain date is between the 26th and the 31st of december of the current year. 
+    function isbetween26and31(now){ //return a boolean    
+        if(now >= the26thOfDecInSeconds && now<=the31stOfDecInSeconds){
+            console.log("its some date between the 26th and 31st of dec");
+            return true;
+        }
+        return false; 
+    }
+
+// tells you if today is christmas or  not. 
+    function isTodayChristmas(now){//return boolean 
+        if(now >= christmasDayInSeconds && now < the26thOfDecInSeconds){
+            console.log("ITS XMAS");
+            return true;
+        }
+        console.log("not xmas :(");
+        return false; 
+    }
 
 
+    function howManyDaysLeftUntilXmas(now){
+        // if(isTodayChristmas){
+        //     tweet(today is christmas!)
+        // }
+
+        // else if(isbetween26and31()){
+        //     caclulate days until christmas of the next year 
+        //          use time to X 
+        // }
+
+        // else{
+        //     calculate days left until christmas of this year
+        //          use time to X 
+        // }  
+    }
 
 
 </script>
-
 </body>
 </html>
