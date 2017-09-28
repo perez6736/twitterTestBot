@@ -49,7 +49,7 @@ function isTodayChristmas(now){//return boolean
 function howManyDaysLeftUntilXmas(){
     var daysLeft;
     if(isTodayChristmas(nowinSeconds)){
-        return "Todays is Christmas"
+        return "Todays is Christmas!"
     }
 
     else if(isbetween26and31()){ //calculate how many days are left till next years christmas 
@@ -67,7 +67,7 @@ function howManyDaysLeftUntilXmas(){
 
 
 var tweet = { 
-	status: 'my first post from node!' 
+	status: howManyDaysLeftUntilXmas() 
 }
 
 //test a post request by tweeting something. 
