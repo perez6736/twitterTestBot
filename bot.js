@@ -54,14 +54,14 @@ function howManyDaysLeftUntilXmas(){
 
     else if(isbetween26and31()){ //calculate how many days are left till next years christmas 
         daysLeft = nextChristmas.diff(now, 'days');
-        return "There are " + daysLeft + " until Christmas";
+        return "There are " + daysLeft + " days until Christmas";
 
         
     }
 
     else{ //calculate how may days are left until this christmas 
        daysLeft = christmasDay.diff(now, 'days'); 
-       return "There are " + daysLeft + " until Christmas";
+       return "There are " + daysLeft + "days until Christmas";
     }  
 }
 
