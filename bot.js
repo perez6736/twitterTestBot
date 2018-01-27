@@ -82,6 +82,7 @@ T.post('statuses/update', tweet, tweeted);
 
 
 function tweeted(err, data, response) {
+    console.log("this the tweet: " + tweet)
 	if(err){
 		console.log("something went wrong");
 		console.log(err);
